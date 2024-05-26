@@ -5,8 +5,9 @@ from entities.creditcard import CreditCard
 from entities.user import User
 from helpers.database import DatabaseConnection
 from entities.admin import Admin
-
-
+from helpers.filters import filter_hotels
+from helpers.login import login
+from helpers.create_acount import create_account
 
 
 class HotelBookingSystem:
@@ -35,13 +36,13 @@ class HotelBookingSystem:
             elif choice == '3':
                 self.book_hotel()
             elif choice == '4':
-                self.create_account()
+                create_account(self.user)  
             elif choice == '5':
-                self.login()
+                self.current_user_id = self.login()
             elif choice == '6':
                 break
             elif choice == '7':
-                admin_password = input('enter a password:')
+                admin_password = input('Enter admin password: ')
                 if admin_password == 'adminedhem':
                     name = input("Enter the name of the hotel: ")
                     city = input("Enter the city of the hotel: ")
@@ -51,7 +52,10 @@ class HotelBookingSystem:
                     print("Only admin can perform this action.")
             else:
                 print("Invalid choice, please try again.")
-    
+
+    def filter_hotels(self):
+        filter_hotels(self.hotel)
+
     def add_hotel(self):
         name = input("Enter the name of the hotel: ")
         city = input("Enter the city of the hotel: ")
@@ -82,37 +86,8 @@ class HotelBookingSystem:
         else:
             print("Hotel is not available for booking.")
 
-    def create_account(self):
-        username = input("Enter a username: ")
-        password = input("Enter a password: ")
-        email = input("Enter your email: ")
-        self.user.create_account(username, password, email)
-        print("Account created successfully.")
-
     def login(self):
-        username = input("Enter your username: ")
-        password = input("Enter your password: ")
-        authenticated, user_id = self.user.authenticate(username, password)
-        if authenticated:
-            self.current_user_id = user_id
-            print("Login successful.")
-        else:
-            print("Invalid username or password.")
-
-    def filter_hotels(self):
-        city = input("Enter city to filter by (leave empty to ignore): ")
-        name = input("Enter hotel name to filter by (leave empty to ignore): ")
-        min_price = input("Enter minimum price to filter by (leave empty to ignore): ")
-        max_price = input("Enter maximum price to filter by (leave empty to ignore): ")
-
-        filters = {
-            "city": city,
-            "name": name,
-            "min_price": min_price,
-            "max_price": max_price
-        }
-
-        self.hotel.filter_hotels(filters)
+        return login(self.user)
 
 def main():
     booking_system = HotelBookingSystem()
