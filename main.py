@@ -72,9 +72,22 @@ class HotelBookingSystem:
         available, hotel_name, city = self.hotel.check_availability(hotel_id)
         if available:
             print(f"Hotel '{hotel_name}' in {city} is available for booking.")
-            card_number = input("Enter your credit card number: ")
+            while True:
+                card_number = input("Enter your credit card number (16 digits): ")
+                if card_number.isdigit() and len(card_number) == 16:
+                    break
+                else:
+                    print("Invalid credit card number. Please enter a 16-digit numeric credit card number.")
+            
             expiration = input("Enter the expiration date (MM/YY): ")
-            cvc = input("Enter the CVV/CVC: ")
+
+            while True:
+                cvc = input("Enter the CVV/CVC (3 digits): ")
+                if cvc.isdigit() and len(cvc) == 3:
+                    break
+                else:
+                    print("Invalid CVV/CVC. Please enter a 3-digit numeric CVV/CVC.")
+            
             holder = input("Enter the card holder's name: ")
             valid, card_holder = self.credit_card.validate_credit_card(card_number, expiration, cvc, holder)
             if valid:
