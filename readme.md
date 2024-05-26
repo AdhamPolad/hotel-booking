@@ -16,15 +16,15 @@ Welcome to the Hotel Booking System! This is a command-line based application th
 
 ## How to Run the Application
 
-Ensure you have Python installed on your machine.
-Install MySQL and create a database for the hotel booking system.
-Set up the database schema and tables as per the requirements.
-Configure the DatabaseConnection class in helpers/database.py to connect to your MySQL database.
-Clone the repository and navigate to the project directory.
-Run the application using the command:
-bash
-Copy code
-python main.py
+1. Ensure you have Python installed on your machine.
+2. Install MySQL and create a database for the hotel booking system.
+3. Set up the database schema and tables as per the requirements.
+4. Configure the DatabaseConnection class in helpers/database.py to connect to your MySQL database.
+5. Clone the repository and navigate to the project directory.
+6. Run the application using the command:
+7. bash
+8. Copy code
+9. python main.py
 
 ## Code Structure
 
@@ -68,13 +68,16 @@ Provide valid credit card details to complete the booking.
 Create a New Account
 Select option 4 from the main menu.
 Follow the prompts to create a new user account.
-Login
-Select option 5 from the main menu.
-Provide your username and password to log in.
-Add New Hotel (Admin)
-Select option 7 from the main menu.
-Enter the admin password to gain access.
-Provide the hotel details to add a new hotel to the system.
+
+## Login
+1. Select option 5 from the main menu.
+2. Provide your username and password to log in.
+
+## Add New Hotel (Admin)
+1. Select option 7 from the main menu.
+2. Enter the admin password to gain access.
+3. Provide the hotel details to add a new hotel to the system.
+
 Admin Password
 The default admin password is adminedhem. Ensure to change this in the production environment for better security.
 
