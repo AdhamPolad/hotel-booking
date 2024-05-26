@@ -1,16 +1,21 @@
-Hotel Booking System
+# Hotel Booking System
+
 Introduction
+
 Welcome to the Hotel Booking System! This is a command-line based application that allows users to browse, filter, and book hotels. Additionally, admins have the ability to add new hotels to the system. The system ensures secure booking by validating credit card details.
 
-Features
-Show Available Hotels: View a list of all available hotels.
-Filter Hotels: Apply various filters to find hotels that meet specific criteria.
-Book a Hotel: Securely book a hotel by providing valid credit card details.
-Create a New Account: Create a user account to enable booking.
-Login: Login to the system to access booking functionalities.
-Exit: Exit the application.
-Add New Hotel (Admin): Admins can add new hotels to the system by providing hotel details and a password.
-How to Run the Application
+## Features
+
+1. Show Available Hotels: View a list of all available hotels.
+2. Filter Hotels: Apply various filters to find hotels that meet specific criteria.
+3. Book a Hotel: Securely book a hotel by providing valid credit card details.
+4. Create a New Account: Create a user account to enable booking.
+5. Login: Login to the system to access booking functionalities.
+6. Exit: Exit the application.
+7. Add New Hotel (Admin): Admins can add new hotels to the system by providing hotel details and a password.
+
+## How to Run the Application
+
 Ensure you have Python installed on your machine.
 Install MySQL and create a database for the hotel booking system.
 Set up the database schema and tables as per the requirements.
@@ -20,7 +25,9 @@ Run the application using the command:
 bash
 Copy code
 python main.py
-Code Structure
+
+## Code Structure
+
 main.py: The entry point of the application. It initializes the HotelBookingSystem class and runs the main loop.
 entities: Contains the entity classes Hotel, CreditCard, User, and Admin.
 helpers: Contains helper functions and classes such as DatabaseConnection, filter_hotels, login, and create_account.
@@ -28,26 +35,27 @@ Class Descriptions
 HotelBookingSystem
 This is the main class that orchestrates the application's functionality.
 
-Methods:
+## Methods:
 __init__(): Initializes the database connection and entity instances.
 run(): Runs the main loop of the application, displaying options and executing user choices.
 filter_hotels(): Allows users to apply filters to the list of hotels.
 add_hotel(): Admin function to add a new hotel.
 book_hotel(): Allows users to book a hotel after validating credit card details.
 login(): Handles user login.
-Hotel
+
+## Hotel
 Handles hotel-related operations such as displaying available hotels and checking availability.
 
-CreditCard
+## CreditCard
 Handles credit card validation.
 
-User
+## User
 Manages user-related operations including account creation and authentication.
 
-Admin
+## Admin
 Handles admin-specific operations such as adding new hotels.
 
-Usage
+## Usage
 Show Available Hotels
 Select option 1 from the main menu to view all available hotels.
 Filter Hotels
@@ -70,5 +78,5 @@ Provide the hotel details to add a new hotel to the system.
 Admin Password
 The default admin password is adminedhem. Ensure to change this in the production environment for better security.
 
-Conclusion
+## Conclusion
 The Hotel Booking System is a simple yet powerful tool for managing hotel bookings. By following the instructions provided, users can easily navigate through the system and perform various operations. For any further assistance or contribution, please refer to the project's repository.
